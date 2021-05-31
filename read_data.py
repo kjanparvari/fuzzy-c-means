@@ -6,7 +6,7 @@ def get_data(number: int) -> list:
     with open(f'./dataset/data{number}.csv') as file:
         reader = csv.reader(file)
         for row in reader:
-            if len(row) == 2:
+            if len(row) != 0:
                 result.append((float(row[0]), float(row[1])))
     return result
 
