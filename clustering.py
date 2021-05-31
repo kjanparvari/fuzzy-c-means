@@ -17,11 +17,14 @@ class CMeans:
         self.costs = []
         self.colors = ['#0000FF', '#00FF00', '#FF0000', '#FFFF00', '#FF00FF', '#00FFFF', '#000000']
 
-    def go(self):
+    def run(self):
         for cn in range(1, 11):
             print(f"progress: {cn}")
             self.clusters_number = cn
             self.process()
+            # for data_number in range(self.dataset_size):
+            #     print(self.mews[data_number])
+            # self.plot_data()
             self.costs.append(self.cost())
         self.plot_costs()
         print(self.costs)
@@ -105,7 +108,7 @@ class CMeans:
         plt.xticks(range(0, 10), range(1, 11))
         plt.show()
 
-    def plot_data(self, progress_number: int):
+    def plot_data(self, progress_number: int = -1):
         for data_number in range(self.dataset_size):
             x = self.data[data_number][0]
             y = self.data[data_number][1]
@@ -116,6 +119,7 @@ class CMeans:
             y = self.centroid(cluster_number)[1]
             c = self.colors[-1]
             plt.scatter(x, y, c=c)
-        plt.title(f"progress: {progress_number}")
+        if progress_number != -1:
+            plt.title(f"progress: {progress_number}")
         plt.savefig(f'./figs/plot{progress_number}')
         plt.show()
