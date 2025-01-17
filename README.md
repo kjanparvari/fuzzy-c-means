@@ -19,4 +19,4 @@ This project explores fuzzy logic and clustering algorithms, providing a hands-o
 This project was developed as part of the **Computational Intelligence course** at **Amirkabir University of Technology (AUT)**.  
 
 ## License  
-This project is licensed under the AUT License. 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  
